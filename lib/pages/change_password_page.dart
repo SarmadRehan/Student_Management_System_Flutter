@@ -43,7 +43,7 @@ class ChangePasswordPage extends StatelessWidget {
                           obscureText: true,
                           decoration: const InputDecoration(
                             prefixIcon: Icon(Icons.key),
-                            hintText: 'Old Password',
+                            hintText: 'Current Password',
                             suffixIcon: Icon(Icons.visibility),
                           ),
                         ),

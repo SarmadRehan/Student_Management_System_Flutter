@@ -5,12 +5,12 @@ import '../utils/routes.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
-
   @override
   State<LoginPage> createState() => _LoginPageState();
 }
 
 class _LoginPageState extends State<LoginPage> {
+  final _globalKeyLoginForm = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,6 +20,7 @@ class _LoginPageState extends State<LoginPage> {
           child: Center(
             child: SingleChildScrollView(
               child: Form(
+                key: _globalKeyLoginForm,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -33,17 +34,8 @@ class _LoginPageState extends State<LoginPage> {
                       textInputAction: TextInputAction.next,
                       decoration: const InputDecoration(
                         prefixIcon: Icon(Icons.pin),
-                        hintText: 'Enter cnic no',
+                        hintText: 'Enter Roll no',
                       ),
-                      autovalidateMode: AutovalidateMode.onUserInteraction,
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Please enter cnic no';
-                        } else if (!RegExp(r'^(\d{13})$').hasMatch(value)) {
-                          return 'Please enter 13 digits valid cnic no';
-                        }
-                        return null;
-                      },
                     ),
                     kPageItemSpacing2,
                     TextFormField(
@@ -58,17 +50,6 @@ class _LoginPageState extends State<LoginPage> {
                           onPressed: () {},
                         ),
                       ),
-                      autovalidateMode: AutovalidateMode.onUserInteraction,
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Please enter password';
-                        } else if (value.length < 7) {
-                          return 'Please enter at least 8 characters password';
-                        } else if (value.length > 12) {
-                          return 'Please enter at most 12 characters password';
-                        }
-                        return null;
-                      },
                     ),
                     kPageItemSpacing4,
                     SizedBox(
