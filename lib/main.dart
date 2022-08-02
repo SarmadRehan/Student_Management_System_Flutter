@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         themeMode: ThemeMode.system,
         theme: themeDataLight,
         // Routes config
-        initialRoute: RouteGenerator.login,
+        initialRoute: RouteGenerator.home,
         onGenerateRoute: RouteGenerator.generateRoute,
       ),
       designSize: const Size(375, 812),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../utils/constants.dart';
+import '../utils/routes.dart';
 
 class ChangePasswordPage extends StatelessWidget {
   ChangePasswordPage({Key? key}) : super(key: key);
@@ -14,7 +15,12 @@ class ChangePasswordPage extends StatelessWidget {
           Positioned(
             top: 30.h,
             child: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(
+                  context,
+                  RouteGenerator.login,
+                );
+              },
               icon: Icon(
                 Icons.arrow_back,
                 size: 30.w,
